@@ -17,7 +17,7 @@
 
 `$ apt install sox libsox-fmt-all libatlas-base-dev build-essential`
 
-`$ npm install -g snowboy2mqtt`
+`$ npm install -g snowboy2mqtt --unsafe-perm`
 
 Create a model folder, e.g. `/opt/snowboy` and put the [Snowboy .umdl/.pmdl file(s)](https://snowboy.kitt.ai/dashboard) 
 in it.

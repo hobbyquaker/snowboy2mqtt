@@ -87,7 +87,7 @@ dir.forEach(file => {
         log.info('adding hotword', file);
         models.add({
             file: path.join(config.modelPath, file),
-            sensitivity: String(config.sensitivity),
+            sensitivity: config.sensitivity,
             hotwords: name
         });
     }
@@ -96,7 +96,7 @@ dir.forEach(file => {
 const detector = new Detector({
     resource: path.join(__dirname, '/node_modules/snowboy/resources/common.res'),
     models,
-    audioGain: parseFloat(config.audioGain),
+    audioGain: config.audioGain,
     applyFrontend: true
 });
 

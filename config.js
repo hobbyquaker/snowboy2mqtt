@@ -18,7 +18,8 @@ module.exports = require('yargs')
         p: 'model-path',
         a: 'activation-hotword',
         t: 'timeout',
-        g: 'audio-gain'
+        g: 'audio-gain',
+        s: 'sensitivity'
     })
     .default({
         u: 'mqtt://127.0.0.1',
