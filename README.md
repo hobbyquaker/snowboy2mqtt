@@ -13,15 +13,17 @@
 
 ## Install
 
-Debian, Raspbian, Armbian, Ubuntu
-
-Node.js >= 8
+**Prerquisites:** Debian, Raspbian, Armbian, Ubuntu; Node.js >= 8
 
 `$ apt install sox libsox-fmt-all libatlas-base-dev build-essential`
 
 `$ npm install -g snowboy2mqtt`
 
-Create a model folder, e.g. `/opt/snowboy` and place .umdl/.pmdl files in it.
+Create a model folder, e.g. `/opt/snowboy` and put the [Snowboy .umdl/.pmdl file(s)](https://snowboy.kitt.ai/dashboard) 
+in it.
+
+I suggest to use [pm2](http://pm2.keymetrics.io/) to manage the snowboy2mqtt process (start on system boot, manage log 
+files, ...)
 
 
 ## Command Line Options
@@ -48,12 +50,19 @@ Options:
   --version                 Show version number                        [boolean]
 ```
 
-## Activation Hotword
 
-It's possible to use a Hotword that activates detection of other Hotwords for a configured period of time. So if you set
-e.g. `--activation-hotword computer` and `--timeout 5000` only 5 seconds after someone said _Computer_ the publishing of
-other Hotwords gets activated. Every detected Hotword prolongs the timeout to 5 seconds again. The activation status is
-published retained on the topic `<name>/active`.
+#### MQTT Authentication and TLS
+You can put credentials for authentication in the url supplied to the `--url` option: `mqtt://user:password@broker`. If 
+you want to use TLS for the connection to the broker use `mqtts://` as URL scheme, e.g. `mqtts://broker:8883`.
+
+
+#### Activation Hotword
+
+It's possible to define a Hotword that activates detection of other Hotwords for a configured period of time. So if you 
+set e.g. `--activation-hotword computer` and `--timeout 5000` only 5 seconds after someone said _Computer_ the 
+publishing of other Hotwords gets activated. Every detected Hotword prolongs the timeout to 5 seconds again. The 
+current activation status is published retained on the topic `<name>/active`.
+
 
 ## License
 
