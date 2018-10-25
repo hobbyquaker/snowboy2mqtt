@@ -1,6 +1,6 @@
 {
   "name": "snowboy2mqtt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Publish MQTT Messages on Snowboy Hotword Detection",
   "main": "index.js",
   "scripts": {
