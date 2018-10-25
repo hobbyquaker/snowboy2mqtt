@@ -4,7 +4,7 @@
   "description": "Publish MQTT Messages on Snowboy Hotword Detection",
   "main": "index.js",
   "scripts": {
-    "test": "xo",
+    "test": "camo-purge; xo",
     "lintfix": "xo --fix"
   },
   "engines": {
@@ -41,6 +41,7 @@
     "yargs": "^12.0.2"
   },
   "devDependencies": {
+    "camo-purge": "^1.0.2",
     "xo": "^0.23.0"
   },
   "xo": {
