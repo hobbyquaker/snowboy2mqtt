@@ -64,6 +64,9 @@ publishing of other Hotwords gets activated. Every detected Hotword prolongs the
 current activation status is published retained on the topic `<name>/active`.
 
 
+![](screenshot.png)
+
+
 ## License
 
 snowboy2mqtt © 2018 Sebastian Raff, licensed under [Apache License 2.0](LICENSE)
